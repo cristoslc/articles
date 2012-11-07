@@ -1,0 +1,22 @@
+<!DOCTYPE html "Hacking Articles">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hacking Articles - Trigger PhoneGap Build from GitHub</title>
+        <link rel="stylesheet" href="css/default.css" />
+    </head>
+    <body>
+        <div id="main-wrapper">
+            <p>First you need to get your auth token: <code>$ curl -u me@gbraad.nl-X POST -d &quot;&quot; https://build.phonegap.com/token
+</code></p>
+
+<p>Test it and retrieve your appid using the following command: <code>$ curl https://build.phonegap.com/api/v1/me?auth_token=[token]
+</code></p>
+
+<p>After this go to your Github repo, open the admin and go to &#8216;Service hooks&#8217;. Add a new WebHook URL (first option) and add yours <code>https://build.phonegap.com/apps/[appid]/build/?auth_token=[token]
+</code></p>
+
+<p>Save this and trigger it with &#8216;Test hook&#8217;. When you would open: <code>https://build.phonegap.com/apps/[appid]/builds</code> you will probably see a new build.</p>
+        </div>
+    </body>
+</html>
